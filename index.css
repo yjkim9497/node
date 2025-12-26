@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, sans-serif;
+}
+.small-delta {
+  font-size: 12px;
+}
+
+/* nav-menu */
+.nav-menu {
+  font-family: Arial, sans-serif;
+}
+
+/* 1depth 메뉴 */
+.menu,
+.nav-menu {
+  display: flex;
+  background-color: #2c3e50;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+}
+
+.menu > li:hover {
+  background-color: #34495e;
+}
+
+/* 2depth 메뉴 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ecf0f1;
+  min-width: 180px;
+  border: 1px solid #bdc3c7;
+  z-index: 9999;
+}
+
+.submenu li {
+  padding: 0; /* padding 초기화 */
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #2c3e50;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.submenu li a:hover {
+  background-color: #bdc3c7;
+}
+
+/* 마우스 오버 시 표시 */
+.menu > li:hover .submenu {
+  display: block;
+}
+
+.menu > li > a,
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.menu > li > a.active,
+.submenu li a.active {
+  background-color: #1abc9c; /* 활성화 시 색상 */
+  color: white;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1)) !important;
+}
+
+/* calender 더보기 */
+.fc-daygrid-day-bottom {
+  position: absolute !important;
+  top: -28px;
+  right: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: underline;
+  color: darkgray;
+}
+
+.fc-daygrid-day-top {
+  flex-direction: row !important;
+}
+
+.weekend-narrow {
+  width: 90px !important;
+  min-width: 90px !important;
+  max-width: 90px !important;
+}
